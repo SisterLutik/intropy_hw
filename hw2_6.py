@@ -17,10 +17,44 @@
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
 # }
-my_list = [7, 5, 3, 3, 2]
-n = 3
-for el in my_list:
-    if el < n:
-        result_list.insert(pos, el)
+prod = []
+m = 0
+while m != 4:
+    m = int(input('Введите цифру, чтобы: 1 - добавить товар, 2 - смотреть структуру, 3 - смотреть аналитику, 4 - выход '))
+    if m == 1:
+        t = input('Введите название товара: ')
+        p = input('Введите цену товара: ')
+        v = input('Введите колличество товара: ')
+        u = input('Введите ед.изм. колличества товара: ')
+        n = len(prod)+1
+        prod.append((n, {'название': t, 'цена': p, 'количество': v, 'eд': u}))
+    elif m == 2:
+        for el in prod:
+            print(el)
+    elif m == 3:
+        at = []
+        ap = []
+        av = []
+        an = []
+        for el in prod:
+            lit = el[1]
+            at.append(lit.get('название'))
+            ap.append(lit.get('цена'))
+            av.append(lit.get('количество'))
+            an.append(lit.get('eд'))
+        print('“название”: ', list(set(at)))
+        print('“цена”: ', list(set(ap)))
+        print('“количество”: ', list(set(av)))
+        print('“ед”: ', list(set(an)))
+
+
+
+
+
+
+
+
+
+
 
 
