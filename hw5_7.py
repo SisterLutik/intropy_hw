@@ -23,9 +23,10 @@ for line in f_obj:
     s = line.split()
     d[s[0]] = int(s[2]) - int(s[3])
     l.append(int(s[2]) - int(s[3]))
-d['average_profit'] = sum(l)/len(l)
-
+c = {}
+c['average_profit'] = sum(l)/len(l)
+data = [d, c]
 with open("my_file(7).json", "w", encoding='utf-8') as write_f:
-    json.dump(d, write_f, ensure_ascii=False,indent=4)
+    json.dump(data, write_f, ensure_ascii=False,indent=4)
 
 
